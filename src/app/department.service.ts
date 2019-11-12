@@ -17,12 +17,12 @@ export class DepartmentService {
 
   constructor() { }
 
-  getDepartments(){
-    return[this.departments];
+  getDepartments():Department[]{
+    return this.departments;
   }
 
   addDepartment(d: Department){
-    this.departments.push({...d, id: this.nextID ++});
+    this.departments.push({...d, id: this.nextID++});
     console.log(this.departments);
   }
 

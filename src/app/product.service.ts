@@ -36,6 +36,7 @@ export class ProductService {
 
   addProduct(p: Product){
     this.products.push({id: this.nextID++,...p});
+    console.log(this.products)
   }
 
 }
