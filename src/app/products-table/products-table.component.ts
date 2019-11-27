@@ -1,4 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
+import { ProductService } from '../product.service';
+import { Product } from '../models/product.model';
+import { MatTable } from '@angular/material';
+
 
 @Component({
   selector: 'app-products-table',
@@ -7,9 +11,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProductsTableComponent implements OnInit {
 
-  constructor() { }
+  @ViewChild(MatTable, {static: true}) datable: MatTable<any>;
+
+  products:Product[];
+
+  prodColumns: string[] = ["id", "prodname", "price", "description", "department"];
+
+  constructor(private productService: ProductService) { }
 
   ngOnInit() {
+    this.products = this.productService.getProduct();
+    this.productService.chamadaNovoProduto.subscribe(() =>{
+      this.datable.renderRows();
+    });
   }
 
 }
