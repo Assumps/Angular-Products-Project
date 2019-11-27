@@ -8,9 +8,9 @@ export class ProductService {
 
   private dataFromServer: any[] =[
     {id: 1, name: "Laptop Acer", Department_id: 4, price: 2000, description: "Laptop Gamer"},
-    {id: 1, name: "Shirt", Department_id: 1, price: 70, description: "Shirt Gucci"},
-    {id: 1, name: "Polo", Department_id: 1, price: 130, description: "Polo Prada"},
-    {id: 1, name: "Mouse", Department_id: 3, price: 350, description: "Mouse Zowie Gamer"},
+    {id: 2, name: "Shirt", Department_id: 1, price: 70, description: "Shirt Gucci"},
+    {id: 3, name: "Polo", Department_id: 1, price: 130, description: "Polo Prada"},
+    {id: 4, name: "Mouse", Department_id: 3, price: 350, description: "Mouse Zowie Gamer"},
   ]
 
   private products: Product[] = [];
